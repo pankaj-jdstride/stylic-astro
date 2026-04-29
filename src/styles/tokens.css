@@ -1,0 +1,65 @@
+/* =====================================================================
+   StrideCore TOKENS  (v3.5.1)
+   Global design tokens. Spacing, type scale, radius, shadow, layout.
+   These should NEVER be overridden per-brand — only the brand pack
+   may redefine the brand-* and grey-* ramp variables that follow.
+   ===================================================================== */
+
+:root {
+  /* Grey scale — DEFAULT (cool slate). Overridden by brand pack to
+     a warm-neutral ramp for Stylic. */
+  --grey-50:  #F8FAFC;
+  --grey-100: #F1F5F9;
+  --grey-200: #E2E8F0;
+  --grey-300: #CBD5E1;
+  --grey-400: #94A3B8;
+  --grey-500: #64748B;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1E293B;
+  --grey-900: #0F172A;
+
+  /* Spacing — 4 / 8 / 12 / 16 / 20 / 24 / 32 / 40 / 48 / 64 / 80 / 96 px */
+  --space-4:  4px;  --space-8:  8px;  --space-12: 12px; --space-16: 16px;
+  --space-20: 20px; --space-24: 24px; --space-32: 32px; --space-40: 40px;
+  --space-48: 48px; --space-64: 64px; --space-80: 80px; --space-96: 96px;
+
+  /* Radius */
+  --radius-xs: 2px; --radius-sm: 4px; --radius-m: 6px; --radius-md: 8px;
+  --radius-lg: 16px; --radius-xl: 24px; --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-soft:   0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.10);
+  --shadow-hard:   0 10px 30px rgba(0, 0, 0, 0.15);
+
+  /* Layout */
+  --content-width:      1200px;
+  --content-width-wide: 1400px;
+  --section-padding-y:  var(--space-64);
+  --grid-gap:           var(--space-32);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Type scale */
+  --font-size-xs:   13px;
+  --font-size-sm:   14px;
+  --font-size-base: 16px;
+  --font-size-lg:   20px;
+  --font-size-xl:   24px;
+  --font-size-xxl:  32px;
+  --font-size-h1:   48px;
+  --font-size-h2:   36px;
+  --font-size-h3:   28px;
+  --font-size-h4:   22px;
+  --line-height-body:    1.6;
+  --line-height-heading: 1.15;
+
+  /* Micro-branding */
+  --border-width:           2px;
+  --link-underline-offset:  4px;
+  --hover-lift:             translateY(-4px);
+}

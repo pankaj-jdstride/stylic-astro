@@ -1,0 +1,140 @@
+---
+/**
+ * RangeCard — image-first card for a door collection.
+ *
+ * Used on the homepage range grid. Variant controls grid-column span:
+ *   - feature   = 7/12 cols, wider aspect
+ *   - secondary = 5/12 cols, wider aspect
+ *   - small     = 4/12 cols, portrait aspect
+ *
+ * The grid container itself is defined inline on the page that uses this
+ * component (see pages/index.astro), since the grid is page-specific.
+ */
+
+interface Props {
+  href: string;
+  /** Display number — "01", "02", "+", etc. */
+  num: string;
+  title: string;
+  /** Short text shown above the arrow chevron in the card body. */
+  meta: string;
+  imgSrc: string;
+  imgAlt: string;
+  variant?: 'feature' | 'secondary' | 'small';
+}
+
+const {
+  href,
+  num,
+  title,
+  meta,
+  imgSrc,
+  imgAlt,
+  variant = 'small',
+} = Astro.props;
+---
+
+<a href={href} class={`range-card range-card--${variant}`}>
+  <img src={imgSrc} alt={imgAlt} />
+  <div class="range-card-body">
+    <span class="range-card-num">{num}</span>
+    <h3>{title}</h3>
+    <div class="range-card-meta">
+      {meta}
+      <span class="range-card-meta-arrow">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .range-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+    background: var(--grey-100);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    aspect-ratio: 4 / 5;
+    transition: transform var(--transition-slow);
+  }
+  .range-card:hover { transform: translateY(-4px); }
+
+  .range-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+  .range-card:hover img { transform: scale(1.04); }
+
+  .range-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(31, 28, 24, 0.78) 100%);
+  }
+
+  .range-card-body {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: var(--space-32);
+    z-index: 1;
+    color: var(--white);
+  }
+  .range-card-num {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+    letter-spacing: 0.04em;
+  }
+  .range-card h3 {
+    color: var(--white);
+    font-size: var(--font-size-h3);
+    font-weight: 400;
+    margin-top: var(--space-4);
+  }
+  .range-card-meta {
+    margin-top: var(--space-12);
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
+  }
+  .range-card-meta-arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-base), border-color var(--transition-base);
+  }
+  .range-card:hover .range-card-meta-arrow {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--brand-secondary);
+  }
+
+  /* Variant column spans (the grid lives on the parent page). */
+  .range-card--feature   { grid-column: span 7; aspect-ratio: 16 / 13; }
+  .range-card--secondary { grid-column: span 5; aspect-ratio: 16 / 13; }
+  .range-card--small     { grid-column: span 4; aspect-ratio: 4 / 5; }
+
+  @media (max-width: 1024px) {
+    .range-card--feature, .range-card--secondary { grid-column: span 6; aspect-ratio: 16/10; }
+    .range-card--small { grid-column: span 3; }
+  }
+  @media (max-width: 720px) {
+    .range-card--small { grid-column: span 6; }
+  }
+</style>
