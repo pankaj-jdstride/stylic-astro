@@ -1,0 +1,880 @@
+---
+/**
+ * Homepage — Stylic Security Doors.
+ *
+ * All on-page copy is verbatim from the supplied stylicdoors.com.au
+ * source HTML. See /README.md for the full provenance map.
+ *
+ * Component split: chrome (header, footer, nav overlay, announcement
+ * bar) lives in BaseLayout. Reusable patterns (TrustRibbon, RangeCard)
+ * are imported. Page-specific sections (hero, guarantee feature,
+ * showroom strip, etc.) are kept inline since they only appear here.
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustRibbon from '../components/TrustRibbon.astro';
+import RangeCard from '../components/RangeCard.astro';
+---
+
+<BaseLayout
+  title="Wrought Iron Security Doors Melbourne | Steel Security Doors Melbourne - Stylic Doors"
+  description="Melbourne based, Stylic is a manufacturer of hand-crafted wrought iron and steel security doors."
+>
+  <main>
+    {/* ====================================================================
+        1. HERO OVERLAY
+        Source verbatim h1: "Manufacturers of Hand Crafted Steel doors"
+        Source verbatim sub: meta description.
+        ==================================================================== */}
+    <section class="hero-overlay-section">
+      <div class="sc-1200">
+        <span class="eyebrow">Wrought iron & steel security doors · Melbourne</span>
+        <h1>Manufacturers of <em>Hand Crafted</em> Steel doors</h1>
+        <p class="hero-sub">
+          Melbourne based, Stylic is a manufacturer of hand-crafted wrought iron and steel security doors.
+        </p>
+        <div class="wp-block-buttons">
+          <div class="wp-block-button">
+            <a class="wp-block-button__link" href="#range">View the range</a>
+          </div>
+          <div class="wp-block-button is-style-outline">
+            <a class="wp-block-button__link" href="#enquiry">Enquire Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-est-badge" aria-hidden="true">
+        <span class="hero-est-badge-year">1977</span>
+        <span class="hero-est-badge-label">Established Since</span>
+      </div>
+    </section>
+
+    {/* 2. TRUST RIBBON — five claims from source's "Why Stylic?" sidebar */}
+    <TrustRibbon />
+
+    {/* 3. SECTION INTRO — source verbatim Cast Craft body paragraph */}
+    <section class="section-intro">
+      <div class="sc-1200">
+        <span class="eyebrow">Established Since 1977</span>
+        <p>
+          Our range of Cast Craft steel security doors are second to none and are completely hand made to
+          <em>exacting standards.</em> Each door is carefully crafted and made to measure to match your door frame precisely.
+        </p>
+        <div class="section-intro-meta">
+          Stylic Security doors have always represented the best quality and value for money
+        </div>
+      </div>
+    </section>
+
+    {/* 4. RANGE GRID — four collections + Coatings, plus Yale + Handle Furniture below */}
+    <section id="range" class="range-section">
+      <div class="sc-1200">
+        <div class="range-header">
+          <div>
+            <span class="eyebrow">The range</span>
+            <h2>Hand made to exacting standards.</h2>
+          </div>
+          <p>
+            Cast Craft, Period Steel, Victorian and Platinum Screen ranges. View our doors at
+            <a href="/showrooms.htm" class="range-header-link">Schots Home Emporium</a>
+            and inspect the quality and detail of these impressive designs for yourself.
+          </p>
+        </div>
+
+        <div class="range-grid">
+          <RangeCard
+            href="/doors-cast-craft-steel.htm"
+            num="01 — Featured range"
+            title="Cast Craft Steel Doors"
+            meta="View the range"
+            imgSrc="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+            imgAlt="Placeholder — replace with stylic-cast-craft-door-new-v3.jpg from source site. Cast craft steel security door."
+            variant="feature"
+          />
+          <RangeCard
+            href="/doors-period-steel.htm"
+            num="02"
+            title="Period Steel Doors"
+            meta="View the range"
+            imgSrc="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
+            imgAlt="Placeholder — replace before launch. Period steel security door, traditional ironwork."
+            variant="secondary"
+          />
+          <RangeCard
+            href="/doors-victorian.htm"
+            num="03"
+            title="Victorian Steel Doors"
+            meta="View the range"
+            imgSrc="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80"
+            imgAlt="Placeholder — replace before launch. Victorian steel security door."
+          />
+          <RangeCard
+            href="/doors-platinum-screen.htm"
+            num="04"
+            title="Platinum Screen Doors"
+            meta="View the range"
+            imgSrc="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=900&q=80"
+            imgAlt="Placeholder — replace before launch. Platinum screen door."
+          />
+          <RangeCard
+            href="/coating-systems.htm"
+            num="+"
+            title="Protective Coatings"
+            meta="View coating systems"
+            imgSrc="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=900&q=80"
+            imgAlt="Placeholder — replace before launch. Protective coating finish detail."
+          />
+        </div>
+
+        {/* Adjacent products — Yale Lock + Handle Furniture */}
+        <div class="range-adjacent">
+          <a href="/keyless-smart-lock.htm" class="range-adjacent-card">
+            <div class="range-adjacent-img">
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80"
+                alt="Placeholder — replace before launch. Yale Keyless Unity Lock."
+              />
+            </div>
+            <div>
+              <span class="eyebrow eyebrow--inline">Hardware</span>
+              <h4>Yale Keyless Unity Lock</h4>
+              <p>Smart entry, fitted to any Stylic door.</p>
+            </div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+
+          <a href="/stylic-handle-set-furniture.htm" class="range-adjacent-card">
+            <div class="range-adjacent-img">
+              <img
+                src="https://images.unsplash.com/photo-1583845112203-29329902332e?auto=format&fit=crop&w=400&q=80"
+                alt="Placeholder — replace before launch. Stylic handle set furniture."
+              />
+            </div>
+            <div>
+              <span class="eyebrow eyebrow--inline">Hardware</span>
+              <h4>Stylic Handle Set Furniture</h4>
+              <p>Coordinated handle and lever furniture.</p>
+            </div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* 5. STATS ROW — every metric traces to a source claim */}
+    <section class="stats-section">
+      <div class="sc-1200">
+        <div class="stats-row">
+          <div class="stats-row-item">
+            <div class="metric">1977</div>
+            <p>Established Since</p>
+          </div>
+          <div class="stats-row-item">
+            <div class="metric">5/10/16<small>yr</small></div>
+            <p>Warranties on every door</p>
+          </div>
+          <div class="stats-row-item">
+            <div class="metric">100<small>%</small></div>
+            <p>Guarantee — read the claim below</p>
+          </div>
+          <div class="stats-row-item">
+            <div class="metric">0<small>%</small></div>
+            <p>Credit card surcharges</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 6. GUARANTEE — verbatim source claim, feature treatment */}
+    <section class="guarantee-feature-section">
+      <div class="sc-1200">
+        <div class="guarantee-feature">
+          <div class="guarantee-feature-seal" aria-hidden="true">
+            <div class="guarantee-feature-seal-ring"></div>
+            <div class="guarantee-feature-seal-inner">
+              <span class="pct">100%</span>
+              <span class="label">Guarantee</span>
+            </div>
+          </div>
+          <div class="guarantee-feature-body">
+            <span class="eyebrow">100% Guarantee</span>
+            <h2>
+              Stylic will build you a security door for <em>FREE</em> if you can find a manufacturer to
+              duplicate our product anywhere in Australia.
+            </h2>
+            <p class="lede">There are no compromises when choosing a 'Stylic' security door.</p>
+            <p class="body">
+              Quality, style and complete peace of mind that you are investing in the best product today...
+              for tomorrow.
+            </p>
+            <div class="guarantee-warranty-list">
+              <span class="guarantee-warranty-pill"><strong>5</strong> year</span>
+              <span class="guarantee-warranty-pill"><strong>10</strong> year</span>
+              <span class="guarantee-warranty-pill"><strong>16</strong> year warranties</span>
+            </div>
+            <p class="guarantee-review-link">
+              <a
+                href="https://g.page/r/Cc8H8caVaBkpEBM/review"
+                target="_blank"
+                rel="noopener"
+                class="link-arrow"
+              >
+                Google Review
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 7. EDITORIAL FEATURE — verbatim source body copy on dark */}
+    <section class="process-section">
+      <div class="sc-1200" style="max-width: 900px;">
+        <span class="eyebrow">Cast Craft Steel Doors</span>
+        <h2 class="editorial-heading">
+          Second to none — completely hand made to
+          <em>exacting standards.</em>
+        </h2>
+        <p class="editorial-body">
+          Our range of Cast Craft steel security doors are second to none and are completely hand made to
+          exacting standards. Each door is carefully crafted and made to measure to match your door frame
+          precisely.
+        </p>
+        <p class="editorial-body">Stylic Security doors have always represented the best quality and value for money.</p>
+        <p>
+          <strong class="editorial-cta">
+            View our range of doors at
+            <a href="/showrooms.htm">Schots Home Emporium</a>
+            and inspect the quality and detail of these impressive designs for yourself.
+          </strong>
+        </p>
+      </div>
+    </section>
+
+    {/* 8. SHOWROOM + GOOGLE REVIEW STRIP */}
+    <section id="showrooms" class="showroom-strip-section">
+      <div class="sc-1200">
+        <div class="showroom-strip">
+          <a href="/showrooms.htm" class="showroom-strip-card">
+            <span class="eyebrow">See the work</span>
+            <h3>Inspect the range at Schots Home Emporium</h3>
+            <p>
+              View our range of doors at Schots Home Emporium and inspect the quality and detail of these
+              impressive designs for yourself.
+            </p>
+            <div class="meta">
+              <span>View showroom locations</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+          </a>
+
+          <a
+            href="https://g.page/r/Cc8H8caVaBkpEBM/review"
+            target="_blank"
+            rel="noopener"
+            class="showroom-strip-card"
+          >
+            <span class="eyebrow">Reviews</span>
+            <div class="stars" aria-label="Customer reviews">★ ★ ★ ★ ★</div>
+            <h3>Google Review</h3>
+            <p>
+              Read what Stylic customers are saying — or, if Stylic has built you a door, leave a review of
+              your own.
+            </p>
+            <div class="meta">
+              <span>Open Google Reviews</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* 9. CTA SPLIT */}
+    <section id="enquiry" class="cta-split">
+      <div class="sc-1200">
+        <div class="cta-split-banner">
+          <div>
+            <span class="eyebrow">Get in touch</span>
+            <h2>Send an <em>enquiry</em> or call the workshop.</h2>
+            <p>
+              Established Since 1977. Hand-crafted wrought iron and steel security doors, made-to-measure in
+              Melbourne.
+            </p>
+          </div>
+          <div class="cta-split-actions">
+            <a href="#enquiry-form" class="cta-split-action">
+              <div>
+                <strong>Enquire Now</strong>
+                <span>Send us a message</span>
+              </div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+            <a href="tel:0394653841" class="cta-split-action">
+              <div>
+                <strong>(03) 9465 3841</strong>
+                <span>Call Stylic Security Doors</span>
+              </div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </a>
+            <a href="/showrooms.htm" class="cta-split-action">
+              <div>
+                <strong>Visit Schots Home Emporium</strong>
+                <span>See the range in person</span>
+              </div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  /* ----- Hero overlay ----- */
+  .hero-overlay-section {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: flex-end;
+    color: var(--white);
+    overflow: hidden;
+    background: var(--brand-secondary);
+  }
+  .hero-overlay-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        180deg,
+        rgba(31, 28, 24, 0.25) 0%,
+        rgba(31, 28, 24, 0.45) 55%,
+        rgba(31, 28, 24, 0.88) 100%
+      ),
+      url('https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=2400&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .hero-overlay-section .sc-1200 {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-80);
+    width: 100%;
+  }
+  .hero-overlay-section h1 {
+    color: var(--white);
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 300;
+    max-width: 18ch;
+    letter-spacing: -0.02em;
+  }
+  .hero-overlay-section h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--brand-accent-light);
+  }
+  .hero-overlay-section .hero-sub {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.88);
+    margin-top: var(--space-24);
+    max-width: 56ch;
+    line-height: 1.5;
+  }
+  .hero-overlay-section :global(.eyebrow) { color: var(--brand-accent-light); }
+  .hero-overlay-section :global(.wp-block-buttons) { margin-top: var(--space-40); }
+
+  .hero-est-badge {
+    position: absolute;
+    bottom: var(--space-32);
+    right: var(--space-32);
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: var(--font-heading);
+    font-style: italic;
+  }
+  .hero-est-badge-year { font-size: 36px; font-weight: 300; line-height: 1; }
+  .hero-est-badge-label {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: var(--space-4);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ----- Section intro ----- */
+  .section-intro { padding: var(--space-96) 0 var(--space-64); }
+  .section-intro p {
+    font-family: var(--font-heading);
+    font-size: clamp(24px, 2.6vw, 36px);
+    line-height: 1.35;
+    color: var(--brand-secondary);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    max-width: 32ch;
+  }
+  .section-intro p em { font-style: italic; color: var(--brand-primary); }
+  .section-intro-meta {
+    margin-top: var(--space-32);
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+    color: var(--grey-500);
+    font-size: var(--font-size-sm);
+  }
+  .section-intro-meta::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--grey-400);
+  }
+
+  /* ----- Range section ----- */
+  .range-section { padding: var(--space-64) 0 var(--space-96); }
+  .range-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--space-32);
+    margin-bottom: var(--space-48);
+  }
+  .range-header h2 {
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 300;
+    max-width: 16ch;
+    letter-spacing: -0.02em;
+  }
+  .range-header p {
+    max-width: 38ch;
+    color: var(--grey-600);
+    line-height: 1.6;
+  }
+  .range-header-link {
+    color: var(--brand-secondary);
+    border-bottom: 1px solid var(--brand-secondary);
+  }
+  .range-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-24);
+  }
+
+  /* Adjacent product cards */
+  .range-adjacent {
+    margin-top: var(--space-48);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-24);
+    border-top: 1px solid var(--grey-200);
+    padding-top: var(--space-48);
+  }
+  .range-adjacent-card {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    gap: var(--space-24);
+    padding: var(--space-24);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--card-radius);
+    background: var(--white);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--transition-base), transform var(--transition-base);
+  }
+  .range-adjacent-card:hover {
+    border-color: var(--brand-secondary);
+    transform: translateY(-2px);
+    color: inherit;
+  }
+  .range-adjacent-img {
+    aspect-ratio: 1;
+    background: var(--grey-100);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .range-adjacent-img img { width: 100%; height: 100%; object-fit: cover; }
+  .range-adjacent-card h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .range-adjacent-card p {
+    font-size: var(--font-size-sm);
+    color: var(--grey-600);
+    line-height: 1.4;
+  }
+  .range-adjacent-card svg {
+    width: 18px;
+    height: 18px;
+    color: var(--grey-500);
+  }
+  /* Inline-eyebrow override for tighter cards */
+  :global(.eyebrow.eyebrow--inline) { margin-bottom: 4px; }
+
+  /* ----- Stats section ----- */
+  .stats-section {
+    background: var(--grey-50);
+    border-top: 1px solid var(--grey-200);
+    border-bottom: 1px solid var(--grey-200);
+    padding: var(--space-80) 0;
+  }
+
+  /* ----- Guarantee feature ----- */
+  .guarantee-feature-section {
+    padding: var(--space-96) 0;
+    background: var(--white);
+  }
+  .guarantee-feature {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-64);
+    align-items: center;
+    background: var(--grey-50);
+    border-radius: var(--card-radius);
+    padding: var(--space-64);
+    border-left: 3px solid var(--brand-primary);
+  }
+  .guarantee-feature-seal {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .guarantee-feature-seal-ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--brand-primary);
+    border-radius: 50%;
+    animation: gentle-rotate 60s linear infinite;
+  }
+  @keyframes gentle-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .guarantee-feature-seal-inner {
+    width: 78%;
+    height: 78%;
+    border-radius: 50%;
+    background: var(--brand-secondary);
+    color: var(--brand-accent-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-16);
+  }
+  .guarantee-feature-seal-inner .pct {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .guarantee-feature-seal-inner .label {
+    font-family: var(--font-body);
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-top: var(--space-8);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .guarantee-feature-body h2 {
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: var(--space-20);
+  }
+  .guarantee-feature-body h2 em {
+    font-style: italic;
+    color: var(--brand-primary);
+  }
+  .guarantee-feature-body .lede {
+    font-size: var(--font-size-lg);
+    color: var(--brand-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--space-16);
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
+  .guarantee-feature-body .body {
+    color: var(--grey-600);
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    margin-bottom: var(--space-24);
+  }
+  .guarantee-warranty-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-12);
+    margin-top: var(--space-24);
+  }
+  .guarantee-warranty-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-8);
+    padding: var(--space-8) var(--space-16);
+    border: 1px solid var(--grey-300);
+    border-radius: var(--radius-pill);
+    background: var(--white);
+    font-size: var(--font-size-sm);
+    color: var(--grey-700);
+  }
+  .guarantee-warranty-pill strong {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--brand-primary);
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .guarantee-review-link { margin-top: var(--space-32); }
+
+  /* ----- Editorial feature (dark) ----- */
+  .process-section {
+    background: var(--brand-secondary);
+    color: var(--white);
+    padding: var(--space-96) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .process-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--brand-primary) 30%, transparent) 0%,
+      transparent 60%
+    );
+    pointer-events: none;
+  }
+  .process-section :global(.eyebrow) { color: var(--brand-accent-light); }
+  .editorial-heading {
+    color: var(--white);
+    font-weight: 300;
+    font-size: clamp(36px, 4.5vw, 56px);
+    margin-bottom: var(--space-32);
+    position: relative;
+  }
+  .editorial-heading em {
+    font-style: italic;
+    color: var(--brand-accent-light);
+  }
+  .editorial-body {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--grey-300);
+    margin-bottom: var(--space-24);
+    position: relative;
+  }
+  .editorial-cta {
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+  }
+  .editorial-cta a {
+    color: var(--brand-accent-light);
+    border-bottom: 1px solid var(--brand-accent-light);
+  }
+
+  /* ----- Showroom strip ----- */
+  .showroom-strip-section {
+    padding: var(--space-80) 0;
+    background: var(--grey-50);
+  }
+  .showroom-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-32);
+    align-items: stretch;
+  }
+  .showroom-strip-card {
+    padding: var(--space-40);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--card-radius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    text-decoration: none;
+    color: inherit;
+    background: var(--white);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+  }
+  .showroom-strip-card:hover {
+    border-color: var(--brand-secondary);
+    transform: translateY(-3px);
+    color: inherit;
+  }
+  .showroom-strip-card :global(.eyebrow) { margin-bottom: 0; }
+  .showroom-strip-card h3 {
+    font-size: var(--font-size-h3);
+    font-weight: 400;
+  }
+  .showroom-strip-card p { color: var(--grey-600); line-height: 1.6; }
+  .showroom-strip-card .stars {
+    font-size: 22px;
+    color: var(--brand-accent);
+    letter-spacing: 4px;
+  }
+  .showroom-strip-card .meta {
+    margin-top: auto;
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--grey-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-sm);
+    color: var(--grey-700);
+    font-weight: 500;
+  }
+
+  /* ----- Final CTA split ----- */
+  .cta-split {
+    background: var(--brand-secondary);
+    color: var(--white);
+    padding: var(--space-96) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-split-banner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-64);
+    align-items: center;
+  }
+  .cta-split-banner h2 {
+    color: var(--white);
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .cta-split-banner h2 em {
+    font-style: italic;
+    color: var(--brand-accent-light);
+  }
+  .cta-split-banner p {
+    color: var(--grey-300);
+    font-size: var(--font-size-lg);
+    margin-top: var(--space-20);
+    max-width: 38ch;
+  }
+  .cta-split-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+  .cta-split-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-24);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--card-radius);
+    color: var(--white);
+    text-decoration: none;
+    transition: background var(--transition-base), border-color var(--transition-base);
+  }
+  .cta-split-action:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--brand-accent-light);
+    color: var(--white);
+  }
+  .cta-split-action strong {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    font-family: var(--font-heading);
+  }
+  .cta-split-action span {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--grey-400);
+    margin-top: 2px;
+  }
+  .cta-split-action svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--brand-accent-light);
+  }
+
+  /* ----- Responsive ----- */
+  @media (max-width: 1024px) {
+    .range-grid { grid-template-columns: repeat(6, 1fr); }
+    .range-adjacent { grid-template-columns: 1fr; }
+    .cta-split-banner { grid-template-columns: 1fr; }
+    .guarantee-feature {
+      grid-template-columns: 200px 1fr;
+      gap: var(--space-32);
+      padding: var(--space-40);
+    }
+    .showroom-strip { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .hero-overlay-section { min-height: 78vh; }
+    .hero-est-badge {
+      width: 90px;
+      height: 90px;
+      bottom: var(--space-16);
+      right: var(--space-16);
+    }
+    .hero-est-badge-year { font-size: 28px; }
+    .range-adjacent-card { grid-template-columns: 80px 1fr; }
+    .range-adjacent-card svg { display: none; }
+    .guarantee-feature {
+      grid-template-columns: 1fr;
+      text-align: left;
+      padding: var(--space-32);
+    }
+    .guarantee-feature-seal { max-width: 200px; margin: 0; }
+    .range-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>

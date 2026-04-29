@@ -1,0 +1,178 @@
+---
+/**
+ * Footer — site-wide footer.
+ *
+ * Mirrors the source site's full nav as four columns plus a copyright row.
+ * Address details are restored from the source HTML's commented-out block;
+ * VERIFY with client whether they should remain hidden.
+ */
+---
+
+<footer class="footer-full-brand">
+  <div class="sc-1200">
+    <div class="footer-grid">
+      <div class="footer-brand-block">
+        <a href="/" class="sc-header__brand" style="color: white;">
+          <svg
+            class="sc-header__brand-mark"
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+            style="color: white;"
+            aria-hidden="true"
+          >
+            <rect x="14" y="6" width="36" height="52" rx="2" fill="none" stroke="currentColor" stroke-width="2.5" />
+            <line x1="14" y1="22" x2="50" y2="22" stroke="currentColor" stroke-width="1.5" />
+            <circle cx="42" cy="34" r="1.6" fill="currentColor" />
+          </svg>
+          <span>
+            <span class="sc-header__brand-name">Stylic <em>Security Doors</em></span>
+            <span class="sc-header__brand-est">Established 1977</span>
+          </span>
+        </a>
+        <p class="footer-tagline">
+          Melbourne based, Stylic is a manufacturer of hand-crafted wrought iron and steel security doors.
+        </p>
+        <address class="footer-address">
+          {/* [VERIFY] These details are commented out on the live site;
+              confirm before publish. */}
+          22 Charnfield Crt<br />
+          Thomastown VIC 3074<br />
+          <a href="tel:0394653841">(03) 9465 3841</a><br />
+          <a href="mailto:info@stylicdoors.com.au">info@stylicdoors.com.au</a><br />
+          <span style="color: var(--grey-600); font-size: 12px;">ABN 61 838 720 075</span>
+        </address>
+      </div>
+
+      <div>
+        <h4>The Range</h4>
+        <ul class="wp-block-list">
+          <li><a href="/doors-cast-craft-steel.htm">Cast Craft Steel</a></li>
+          <li><a href="/doors-period-steel.htm">Period Steel</a></li>
+          <li><a href="/doors-victorian.htm">Victorian Steel</a></li>
+          <li><a href="/doors-platinum-screen.htm">Platinum Screen</a></li>
+          <li><a href="/keyless-smart-lock.htm">Yale Keyless Unity Lock</a></li>
+          <li><a href="/stylic-handle-set-furniture.htm">Stylic Handle Furniture</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <ul class="wp-block-list">
+          <li><a href="/services.htm">Services</a></li>
+          <li><a href="/coating-systems.htm">Protective Coatings</a></li>
+          <li><a href="/about-security-doors.htm">Standards</a></li>
+          <li><a href="/warranties.htm">Warranties</a></li>
+          <li><a href="/gallery.htm">Gallery</a></li>
+          <li><a href="/faq.htm">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Visit & Connect</h4>
+        <ul class="wp-block-list">
+          <li><a href="/showrooms.htm">Showrooms</a></li>
+          <li>
+            <a href="https://g.page/r/Cc8H8caVaBkpEBM/review" target="_blank" rel="noopener">
+              Google Reviews
+            </a>
+          </li>
+          <li><a href="#enquiry">Enquire now</a></li>
+        </ul>
+        <p class="footer-visit-note">
+          View our range at<br />
+          <strong>Schots Home Emporium</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>
+        Copyright © 2013–2026 Stylic Security Doors.
+        <a href="http://www.thelad.com.au" target="_blank" rel="noopener">Web Design Melbourne</a>
+      </span>
+      <div class="footer-bottom-links">
+        <a href="/cookies-policy.htm">Cookie Policy</a>
+        <a href="/privacy-policy.htm">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-full-brand {
+    background: #14120f;
+    color: var(--grey-400);
+    padding: var(--space-96) 0 var(--space-32);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--space-48);
+    margin-bottom: var(--space-64);
+  }
+  .footer-full-brand h4 {
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-20);
+  }
+  .footer-full-brand .wp-block-list li { padding: var(--space-8) 0; }
+  .footer-full-brand .wp-block-list li::before { content: none; }
+  .footer-full-brand a { color: var(--grey-400); font-size: var(--font-size-sm); }
+  .footer-full-brand a:hover { color: var(--white); }
+
+  .footer-brand-block { max-width: 30ch; }
+  .footer-brand-block :global(.sc-header__brand-name) {
+    color: var(--white);
+    font-size: 24px;
+  }
+  .footer-brand-block :global(.sc-header__brand-est) {
+    color: var(--grey-500);
+  }
+  .footer-tagline {
+    margin-top: var(--space-16);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: var(--grey-400);
+  }
+  .footer-address {
+    margin-top: var(--space-24);
+    font-size: var(--font-size-sm);
+    color: var(--grey-500);
+    font-style: normal;
+    line-height: 1.7;
+  }
+  .footer-address a { color: var(--grey-300); }
+
+  .footer-visit-note {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--grey-500);
+    line-height: 1.6;
+  }
+  .footer-visit-note strong { color: var(--grey-300); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--space-32);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-16);
+    font-size: var(--font-size-xs);
+    color: var(--grey-500);
+  }
+  .footer-bottom-links { display: flex; gap: var(--space-24); }
+  .footer-bottom a { color: var(--grey-500); }
+
+  @media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 720px) {
+    .footer-grid { grid-template-columns: 1fr; gap: var(--space-32); }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>

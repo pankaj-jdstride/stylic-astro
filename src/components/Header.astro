@@ -1,0 +1,147 @@
+---
+/**
+ * Header — sticky top bar.
+ *
+ * The hamburger button has data-drawer-toggle and aria-controls="sc-drawer";
+ * the NavOverlay component listens for clicks on this attribute.
+ *
+ * Logo: currently an inline SVG placeholder. Replace with the sampled
+ * /public/logo.svg when the real mark is available.
+ */
+---
+
+<header class="sc-header">
+  <div class="sc-header__inner">
+    <a href="/" class="sc-header__brand" aria-label="Stylic Security Doors home">
+      <!-- Placeholder logo mark — replace with /public/logo.svg before launch. -->
+      <svg
+        class="sc-header__brand-mark"
+        viewBox="0 0 64 64"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <rect x="14" y="6" width="36" height="52" rx="2" fill="none" stroke="currentColor" stroke-width="2.5" />
+        <line x1="14" y1="22" x2="50" y2="22" stroke="currentColor" stroke-width="1.5" />
+        <circle cx="42" cy="34" r="1.6" fill="currentColor" />
+        <line x1="22" y1="32" x2="34" y2="32" stroke="currentColor" stroke-width="1" opacity="0.5" />
+        <line x1="22" y1="38" x2="34" y2="38" stroke="currentColor" stroke-width="1" opacity="0.5" />
+        <line x1="22" y1="44" x2="34" y2="44" stroke="currentColor" stroke-width="1" opacity="0.5" />
+      </svg>
+      <span>
+        <span class="sc-header__brand-name">Stylic <em>Security Doors</em></span>
+        <span class="sc-header__brand-est">Established 1977</span>
+      </span>
+    </a>
+
+    <div class="sc-header__cta">
+      <span class="sc-header__phone"><a href="tel:0394653841">(03) 9465 3841</a></span>
+      <a href="#enquiry" class="btn btn-primary">Enquire Now</a>
+      <button
+        class="sc-header__menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="sc-drawer"
+        data-drawer-toggle
+      >
+        <span class="sc-header__menu-toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="sc-header__menu-toggle-label">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .sc-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--grey-200);
+  }
+  .sc-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-32);
+    padding: var(--space-16) var(--space-24);
+    max-width: var(--content-width-wide);
+    margin: 0 auto;
+  }
+
+  /* Brand mark + name styles are in src/styles/components.css (global)
+     because Footer reuses the same .sc-header__brand* classes.
+     If they were scoped here, the Footer instance would render unstyled. */
+
+  .sc-header__cta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-16);
+  }
+  .sc-header__phone {
+    font-size: var(--font-size-sm);
+    color: var(--grey-700);
+    font-weight: 600;
+  }
+  .sc-header__phone a { color: inherit; }
+
+  .sc-header__menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    background: none;
+    border: none;
+    padding: var(--space-8) var(--space-12);
+    cursor: pointer;
+    color: var(--brand-secondary);
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+  }
+  .sc-header__menu-toggle:hover { background: var(--grey-100); }
+  .sc-header__menu-toggle-icon {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 18px;
+    height: 14px;
+  }
+  .sc-header__menu-toggle-icon span {
+    display: block;
+    height: 1.5px;
+    width: 100%;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform var(--transition-base), opacity var(--transition-fast);
+  }
+
+  /* Hamburger → X morph when open (state lives on the button). */
+  .sc-header__menu-toggle[aria-expanded='true'] .sc-header__menu-toggle-icon span:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+  }
+  .sc-header__menu-toggle[aria-expanded='true'] .sc-header__menu-toggle-icon span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .sc-header__menu-toggle[aria-expanded='true'] .sc-header__menu-toggle-icon span:nth-child(3) {
+    transform: translateY(-5.5px) rotate(-45deg);
+  }
+
+  @media (max-width: 720px) {
+    .sc-header__phone { display: none; }
+  }
+  @media (max-width: 480px) {
+    .sc-header__menu-toggle-label { display: none; }
+  }
+</style>

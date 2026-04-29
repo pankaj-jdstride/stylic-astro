@@ -1,0 +1,36 @@
+---
+/**
+ * AnnouncementBar — thin band above the header.
+ *
+ * Surfaces the "No credit card surcharges!" claim from the source site,
+ * along with the heritage line and a CTA to the showroom partner.
+ */
+---
+
+<div class="announcement-bar">
+  <strong>No credit card surcharges!</strong> ·
+  Established Since 1977 ·
+  <a href="/showrooms.htm">View our range at Schots Home Emporium →</a>
+</div>
+
+<style>
+  .announcement-bar {
+    background: var(--brand-secondary);
+    color: var(--grey-300);
+    padding: var(--space-8) 0;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+  .announcement-bar strong {
+    color: var(--white);
+    margin-right: var(--space-8);
+  }
+  .announcement-bar a {
+    color: var(--brand-accent-light);
+    border-bottom: 1px solid transparent;
+  }
+  .announcement-bar a:hover {
+    border-color: var(--brand-accent-light);
+  }
+</style>

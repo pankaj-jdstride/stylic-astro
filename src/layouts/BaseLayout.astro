@@ -1,0 +1,62 @@
+---
+/**
+ * BaseLayout — the HTML shell every page wraps itself in.
+ *
+ * Responsibilities:
+ *   - <head>: meta, fonts, style imports
+ *   - Global chrome: announcement bar, header, nav overlay, footer
+ *   - <slot /> for the page-specific <main> content
+ *
+ * Style imports are loaded here once (Astro de-duplicates), so per-page
+ * <style> blocks only contain page-specific layout, never the framework
+ * tokens or component classes.
+ */
+
+// Style import order matters: tokens first (provides defaults),
+// brand pack second (overrides them), components last (consumes both).
+import '../styles/tokens.css';
+import '../styles/brand-stylic.css';
+import '../styles/components.css';
+
+import AnnouncementBar from '../components/AnnouncementBar.astro';
+import Header from '../components/Header.astro';
+import NavOverlay from '../components/NavOverlay.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  /** <title> tag — should be unique per page. */
+  title: string;
+  /** <meta name="description"> — used for SEO + social previews. */
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts — Fraunces (heading) + Inter (body), per brand pack. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <AnnouncementBar />
+    <Header />
+    <NavOverlay />
+
+    <slot />
+
+    <Footer />
+  </body>
+</html>
